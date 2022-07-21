@@ -1,4 +1,4 @@
-class autentication {
+class Autentication {
     static autentication_user = (app) => {
         app.use((req, res, next)=>{
             req.method == "GET" ? next() : 
@@ -7,4 +7,4 @@ class autentication {
     }
 }
 
-export default autentication
+export default Autentication

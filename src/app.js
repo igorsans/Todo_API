@@ -1,24 +1,17 @@
-import controller_tarefas from "./Controllers/controller_tarefas.js";
+import Controller_tarefas from "./Controllers/controller_tarefas.js";
 import Controller_users from "./Controllers/controller_user.js";
-import autenticacao from "./middlewares/autenticacao.js"
+import Autenticacao from "./middlewares/autenticacao.js";
 import express from "express";
 
-// instancia do sevidor!
 const app = express();
-// porta que será usada
 const port = 3000;
 
 app.listen(port, () => {
   console.log(`Example app listening on port http://localhost:${port}`);
 });
 
+app.use(express.json()); 
 
-//middlewares
-app.use(express.json()); // middleware que faz o parse do json do body
-
-//middlewares tambem podem ser usados para realizar autenticações
-autenticacao.autentication_user(app) //autenticando verbos para usuario
-
+Autenticacao.autentication_user(app); 
 Controller_users.controller_users(app);
-controller_tarefas(app);
-
+Controller_tarefas.controller_tarefas(app);

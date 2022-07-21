@@ -1,8 +1,9 @@
+class Controller_tarefas {
+  static controller_tarefas = (app) => {
+    app.get("/tarefas", (req, res) => {
+      res.send("Você esta em tarefas");
+    });
+  };
+}
 
-const controller_tarefas = (app) => {
-  app.get("/tarefas", (req, res) => {
-    res.send("Hello World!");
-  });
-};
-
-export default controller_tarefas
+export default Controller_tarefas;
